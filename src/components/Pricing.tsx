@@ -35,11 +35,13 @@ export function Pricing() {
           <PricingCard
             title="Curso Premium"
             price="150"
+            originalPrice="300"
             description="Acceso completo a nuestra academia con mentorías personalizadas"
             features={premiumFeatures}
             ctaText="Comenzar Ahora"
             highlight={true}
             badge="Pago Único"
+            discount="50% OFF"
           />
 
           <PricingCard
