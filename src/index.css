@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+@keyframes graph-float {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-30px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.animate-graph-1 {
+  animation: graph-float 8s ease-in-out infinite;
+}
+
+.animate-graph-2 {
+  animation: graph-float 12s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.animate-graph-3 {
+  animation: graph-float 10s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.animate-graph-4 {
+  animation: graph-float 14s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+.animate-graph-5 {
+  animation: graph-float 11s ease-in-out infinite;
+  animation-delay: -8s;
+}
