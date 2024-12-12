@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container } from './ui/Container';
 import { MessageSquare, Users, Clock, CheckCircle } from 'lucide-react';
+import { PhoneInput } from './ui/PhoneInput';
+import { ContactBackground } from './ui/ContactBackground';
 
 const benefits = [
   {
@@ -27,7 +29,8 @@ const benefits = [
 
 export function Contact() {
   return (
-    <div className="py-20 bg-white" id="contacto">
+    <div className="py-20 bg-white relative" id="contacto">
+      <ContactBackground />
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -74,6 +77,12 @@ export function Contact() {
                   id="email"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
+              </div>
+              <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  Teléfono
+                </label>
+                <PhoneInput />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
