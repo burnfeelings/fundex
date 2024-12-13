@@ -21,8 +21,47 @@
   100% { transform: translateX(0) scaleY(1); }
 }
 
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 1; }
+  50% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.05); opacity: 0; }
+}
+
+@keyframes pricing-glow {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  50% { box-shadow: 0 0 30px 10px rgba(37, 99, 235, 0.2); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+}
+
+@keyframes pricing-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pricing-glow {
+  animation: pricing-glow 3s ease-in-out infinite;
+}
+
+.animate-pricing-gradient {
+  background-size: 200% 200%;
+  animation: pricing-gradient 8s ease infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
 }
 
 .animate-candlestick-1 { animation: candlestick-float 4s ease-in-out infinite; }
