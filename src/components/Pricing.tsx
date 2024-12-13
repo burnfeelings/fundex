@@ -31,7 +31,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
           <PricingCard
             title="Curso Premium"
             price="150"
