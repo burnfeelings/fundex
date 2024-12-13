@@ -2,6 +2,7 @@ import React from 'react';
 import { Check, MessageCircle, Zap, Users, Video, BookOpen } from 'lucide-react';
 import { Container } from './ui/Container';
 import { PricingCard } from './ui/PricingCard';
+import { PricingBackground } from './ui/PricingBackground';
 
 const premiumFeatures = [
   { icon: <Video className="w-5 h-5" />, text: "Acceso completo a todos los cursos" },
@@ -20,9 +21,10 @@ const signalsFeatures = [
 
 export function Pricing() {
   return (
-    <div className="py-20 bg-gray-50" id="cursos">
+    <div className="py-20 bg-gray-50 relative overflow-hidden" id="cursos">
+      <PricingBackground />
       <Container>
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative z-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Planes y Precios
           </h2>
@@ -31,7 +33,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start relative z-10">
           <PricingCard
             title="Curso Premium"
             price="150"
