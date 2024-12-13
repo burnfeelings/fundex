@@ -4,6 +4,7 @@ import { Container } from './ui/Container';
 import { Button } from './ui/Button';
 import { Video } from './ui/Video';
 import { CandlestickBackground } from './ui/CandlestickBackground';
+import { AnimatedTitle } from './ui/AnimatedTitle';
 
 const features = [
   {
@@ -29,19 +30,21 @@ export function Hero() {
       <CandlestickBackground />
       <Container>
         <div className="flex flex-col items-center py-16 relative z-10">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6 animate-fade-in text-center">
-            Domina el Arte del Trading
-          </h1>
-          <p className="text-xl text-gray-600 mb-8 text-center max-w-2xl">
-            Aprende a operar en los mercados financieros con estrategias probadas y mentores expertos.
-          </p>
-          <div className="flex gap-4 mb-12">
-            <Button className="group px-8 py-3 flex items-center">
-              Comenzar Ahora
+          <div className="max-w-4xl mx-auto text-center">
+            <AnimatedTitle />
+            <p className="text-xl text-gray-600 mb-8 animate-fade-in animation-delay-200">
+              Descubre las estrategias que utilizan los traders más exitosos del mercado
+              y únete a una comunidad de traders profesionales.
+            </p>
+          </div>
+
+          <div className="flex gap-4 mb-12 animate-fade-in animation-delay-400">
+            <Button className="group px-8 py-3 flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800">
+              Empieza a Ganar
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="secondary" className="px-8 py-3">
-              Ver Cursos
+            <Button variant="secondary" className="px-8 py-3 border-2">
+              Ver Resultados
             </Button>
           </div>
           
@@ -59,9 +62,11 @@ export function Hero() {
             {features.map((feature, index) => (
               <div 
                 key={index}
-                className="flex flex-col items-center text-center p-6 rounded-lg bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all shadow-lg"
+                className="flex flex-col items-center text-center p-6 rounded-lg bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="text-blue-600 mb-3">{feature.icon}</div>
+                <div className="text-blue-600 mb-3 transform transition-transform group-hover:scale-110">
+                  {feature.icon}
+                </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-600">{feature.description}</p>
               </div>
