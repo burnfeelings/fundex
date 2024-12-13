@@ -2,7 +2,7 @@ import React from 'react';
 
 export function CandlestickBackground() {
   return (
-    <div className="absolute inset-0 opacity-[0.03] pointer-events-none overflow-hidden">
+    <div className="absolute inset-0 opacity-[0.1] pointer-events-none overflow-hidden">
       <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
         {/* Candlestick patterns */}
         {[...Array(12)].map((_, i) => (
