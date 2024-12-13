@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from './ui/Container';
 import { MessageSquare, Users, Clock, CheckCircle } from 'lucide-react';
 import { PhoneInput } from './ui/PhoneInput';
-import { ContactBackground } from './ui/ContactBackground';
+import { ContactDecorations } from './ui/ContactDecorations';
 
 const benefits = [
   {
@@ -29,8 +29,8 @@ const benefits = [
 
 export function Contact() {
   return (
-    <div className="py-20 bg-white relative" id="contacto">
-      <ContactBackground />
+    <div className="py-20 bg-white relative overflow-hidden" id="contacto">
+      <ContactDecorations />
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -41,12 +41,14 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
+        <div className="grid md:grid-cols-2 gap-12 relative">
+          <div className="relative">
             <div className="grid gap-8">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="text-blue-600">{benefit.icon}</div>
+                <div key={index} className="flex gap-4 group hover:bg-gray-50 p-4 rounded-lg transition-colors">
+                  <div className="text-blue-600 transition-transform group-hover:scale-110 duration-300">
+                    {benefit.icon}
+                  </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">{benefit.title}</h3>
                     <p className="text-gray-600">{benefit.description}</p>
@@ -56,51 +58,53 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-xl">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Nombre Completo
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Correo Electrónico
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Teléfono
-                </label>
-                <PhoneInput />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Mensaje
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Enviar Mensaje
-              </button>
-            </form>
+          <div className="relative">
+            <div className="bg-gray-50 p-8 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Nombre Completo
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Correo Electrónico
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Teléfono
+                  </label>
+                  <PhoneInput />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Mensaje
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-[1.02] active:scale-[0.98] duration-300"
+                >
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </Container>
