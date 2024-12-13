@@ -27,16 +27,35 @@
   100% { transform: scale(1.05); opacity: 0; }
 }
 
-@keyframes pricing-glow {
-  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
-  50% { box-shadow: 0 0 30px 10px rgba(37, 99, 235, 0.2); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+@keyframes pulse-subtle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.5; }
 }
 
-@keyframes pricing-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes slide-gradient {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes band-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes title-underline {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-band-top {
+  animation: band-float 4s ease-in-out infinite;
+}
+
+.animate-band-bottom {
+  animation: band-float 4s ease-in-out infinite;
+  animation-delay: -2s;
 }
 
 .animate-fade-in {
@@ -45,15 +64,6 @@
 
 .animate-pulse-ring {
   animation: pulse-ring 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-pricing-glow {
-  animation: pricing-glow 3s ease-in-out infinite;
-}
-
-.animate-pricing-gradient {
-  background-size: 200% 200%;
-  animation: pricing-gradient 8s ease infinite;
 }
 
 .animation-delay-200 {
@@ -72,7 +82,3 @@
 .animate-candlestick-6 { animation: candlestick-float 4s ease-in-out infinite; animation-delay: -2.5s; }
 .animate-candlestick-7 { animation: candlestick-float 4s ease-in-out infinite; animation-delay: -3s; }
 .animate-candlestick-8 { animation: candlestick-float 4s ease-in-out infinite; animation-delay: -3.5s; }
-
-.animate-trend-1 { animation: trend-float 15s ease-in-out infinite; }
-.animate-trend-2 { animation: trend-float 15s ease-in-out infinite; animation-delay: -5s; }
-.animate-trend-3 { animation: trend-float 15s ease-in-out infinite; animation-delay: -10s; }
